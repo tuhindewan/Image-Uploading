@@ -1,5 +1,13 @@
 <?php include "inc/header.php";?>
 
+<?php include "lib/database.php";?>
+
+<?php
+
+$db = new Database();
+
+
+?>
 	<section class="mainoption">
 		 <div class="myform">
 		  <form action="" method="post" enctype="multipart/form-data">

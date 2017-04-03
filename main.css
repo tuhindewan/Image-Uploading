@@ -1,0 +1,15 @@
+ body{font-family: verdana}
+
+ .phpcoding{width: 900px;margin: 0 auto; background: #ddd;}
+
+ .headeroption, .footeroption{
+ 	background: #f1721d;color: #f1721d;
+    text-align: center;padding: 20px;}
+
+ .headeroption h2, .footeroption h2{margin: 0;color: #fff;}
+ .mainoption{min-height: 420px;padding: 20px;}
+
+ .myform{width: 500px;border: 1px solid  #999;margin: 0 auto; 
+  padding: 10px 20px 20px;}
+
+ input[type="submit"],input[type="file"]{cursor: pointer}

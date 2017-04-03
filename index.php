@@ -22,10 +22,15 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['submit'])){
 	 $fileSize = $_FILES['image']['size'];
 	 $filetemp = $_FILES['image']['tmp_name'];
 
-	 $folder = "uploads/";
-	 move_uploaded_file( $filetemp,$folder.$filename);
+	 $div = explode('.', $filename);
+	 $file_ext = strtolower(end($div));
+	 $unique_name = substr(md5(time()),0,10).'.'.$file_ext;
 
-	 $query = "INSERT INTO tbl_image (imageName) VALUES ('$filename')";
+
+	 $folder = "uploads/";
+	 move_uploaded_file( $filetemp,$folder.$unique_name);
+
+	 $query = "INSERT INTO tbl_image (imageName) VALUES ('$unique_name')";
 
 	 $inserted_rows = $db->insert($query);
 	 if($inserted_rows){

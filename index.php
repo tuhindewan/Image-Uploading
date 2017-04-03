@@ -26,6 +26,14 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['submit'])){
 	 $file_ext = strtolower(end($div));
 	 $unique_name = substr(md5(time()),0,10).'.'.$file_ext;
 
+	 if(empty($filename)){
+	 	echo "<span class='error'>Please Select An Image !</span>";
+	 }elseif($fileSize > 1048567){
+	 echo "<span class='error'>Select An Image Less Then 1MB.</span>";
+	 }elseif(in_array($file_ext,$permited)===false){
+	 echo "<span class='error'>You Can Upload Only:- ".implode(', ',$permited)."</span>";
+	 }else{
+
 
 	 $folder = "uploads/";
 	 move_uploaded_file( $filetemp,$folder.$unique_name);
@@ -38,6 +46,8 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['submit'])){
 	 }else{
 			echo "<span class='error'>Image Uploaded Successully.</span>";
 	 }
+
+	} 
 
 }
 

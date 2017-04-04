@@ -75,7 +75,7 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['submit'])){
 			
 
 		 ?>
-		 <a href=""><img src="<?php echo $result['imageName']; ?>" alt="" height="100px" width="200px"></a>
+		 <img src="<?php echo $result['imageName']; ?>" alt="" height="100px" width="200px">
 
 		 
 		 <?php }} ?>

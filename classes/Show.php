@@ -65,20 +65,17 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['submit'])){
 		    </tr>
 		   </table>
 		  </form>
-		<?php 
+		  <?php
 
-		$query = "SELECT * FROM tbl_image ORDER BY imageId DESC LIMIT 1";
-		$getimage = $db->select($query);
-		if ($getimage) {
-			while ($result = $getimage->fetch_assoc()) {
-				
-			
-
-		 ?>
-		 <a href=""><img src="<?php echo $result['imageName']; ?>" alt="" height="100px" width="200px"></a>
-
-		 
-		 <?php }} ?>
+		$query = "SELECT * FROM  tbl_image ORDER BY imageId DESC LIMIT 1";
+		$show = $db->select($query);
+		if($show){
+		while($result = $show->fetch_assoc()){
+		
+		  ?>
+		  
+		  <img src="<?php echo $result['imageName'];?>" height="100px" weight="100px">
+		  <?php } }?>
 		 </div>
 
 	</section>
